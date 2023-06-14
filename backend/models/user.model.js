@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const userSchema = mongoose.Schema({
   username: {
     type: String,
     unique: true,
@@ -15,18 +15,14 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
-    match: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
+    unique: true
   },
   address: {
     type: String,
     required: true
-  },
-  profilePic: {
-    type: String
   }
 });
 
-const User = mongoose.model('User', userSchema);
+const UserModel = mongoose.model('User', userSchema);
 
-module.exports = User;
+module.exports = {UserModel};
