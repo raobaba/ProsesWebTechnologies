@@ -41,13 +41,13 @@ label {
   margin-bottom: 5px;
   color: azure;
 }
-
-input {
+#username,#email,#address,#mobile{
   padding: 8px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 
 button {
   padding: 10px 12px;
@@ -128,4 +128,10 @@ button:hover {
 .custom-button>button{
   height: 35px;
   margin-top: 10px;
+}
+.task>input{
+  margin-top: 1%;
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
 }
