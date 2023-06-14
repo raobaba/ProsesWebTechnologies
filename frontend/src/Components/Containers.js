@@ -7,6 +7,7 @@ export default function Container() {
     return (
         <div className='container'>
           <Buttons />
+           <div className='gap'></div>       
           <Details />
         </div>
       );

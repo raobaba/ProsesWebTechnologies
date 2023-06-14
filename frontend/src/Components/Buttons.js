@@ -5,17 +5,22 @@ export default function Buttons() {
     <div className='button'>
       <form className="todo-form">
         <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" placeholder="Enter name" required />
+          <label htmlFor="username">UserName</label>
+          <input type="text" id="username" placeholder="Enter username" required />
         </div>
         <div className="form-group">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="mobileNo">Mobile No</label>
           <input
-            type="text"
-            id="description"
-            placeholder="Enter description"
-            required
+            type="number" id="mobileNo" maxLength={10} minLength={10} placeholder="Enter mobileNo" required
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" placeholder="Enter email" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
+          <input type="text" id="address" placeholder="Enter address" required />
         </div>
         <button type="submit">Add Todo</button>
       </form>
