@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { handleSubmit } from '../api.js';
 import '../App.css';
 
 export default function Buttons() {
@@ -12,18 +12,10 @@ export default function Buttons() {
 
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-
-    try {
-      // eslint-disable-next-line no-unused-vars
-      const response = await axios.post('http://localhost:8000/add', formData);
-      console.log('Todo added successfully');
-       window.location.reload();
-    } catch (error) {
-      console.error('Failed to add todo', error);
-    }
+    await handleSubmit(formData);
   };
 
   const handleChange = (event) => {
@@ -35,7 +27,7 @@ export default function Buttons() {
 
   return (
     <div className='button'>
-      <form className="todo-form" onSubmit={handleSubmit}>
+      <form className="todo-form" onSubmit={handleFormSubmit}>
         <div className="form-group">
           <label htmlFor="username">UserName</label>
           <input

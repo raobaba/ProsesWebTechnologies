@@ -4,6 +4,7 @@
   min-height: 500px;
   padding-top: 5%;
   height: auto;
+  padding-bottom: 5%;
   background-color: rgb(219,219,219);
 }
 .gap {
@@ -58,7 +59,13 @@ button {
   border-radius: 20px;
   cursor: pointer;
 }
+.completed {
+  text-decoration: line-through;
+}
 
+.completed-text {
+  text-decoration: line-through;
+}
 button:hover {
   background-color: #45a049;
 }

@@ -17,18 +17,28 @@ export default function Details() {
     }
   };
 
+  const handleComplete = (index) => {
+    setData((prevState) => {
+      const newData = [...prevState];
+      newData[index] = {
+        ...newData[index],
+        completed: !newData[index].completed
+      };
+      return newData;
+    });
+  };
   return (
-    <div className='details'>
+    <div className="details">
       {data.map((item, index) => (
-        <div className='input-data' key={index}>
-          <div className='task'>
-            <p>{item.username}</p>
-            <p>{item.mobile}</p>
-            <p>{item.email}</p>
-            <p>{item.address}</p>
+        <div className={`input-data`} key={index}>
+          <div className="task">
+            <p className={item.completed ? 'completed-text' : ''}>{item.username}</p>
+            <p className={item.completed ? 'completed-text' : ''}>{item.mobile}</p>
+            <p className={item.completed ? 'completed-text' : ''}>{item.email}</p>
+            <p className={item.completed ? 'completed-text' : ''}>{item.address}</p>
           </div>
-          <div className='custom-button'>
-            <button>Completed</button>
+          <div className="custom-button">
+            <button onClick={() => handleComplete(index)}> {item.completed ? 'Completed' : 'Not Complete'}</button>
             <button>Edit</button>
             <button>Delete</button>
           </div>
